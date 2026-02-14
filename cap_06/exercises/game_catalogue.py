@@ -47,8 +47,16 @@ for (key,value) in game_library.items():
         print(f"Available on: {str_platforms}") 
         rating += value.get('rating', 0) 
         num_games += 1;
+        
+print("-------------------------")
                        
-game = game_library.get('xx','Game not found in library')
-print(game) 
+game = game_library.get('doom','Game not found in library')
+
+if game == 'Game not found in library': 
+    print(game) 
+else:
+	print(f"Game: {game.get('title')} | Genre: {game.get('genre')} | Rating: {game.get('rating')}/10")
+	print(f"Available on: {game.get('platform')}")
+
 
 print(f"Average Rating: {rating/num_games}")                     
